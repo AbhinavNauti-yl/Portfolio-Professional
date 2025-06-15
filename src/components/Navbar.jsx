@@ -25,6 +25,7 @@ const Navbar = () => {
     { name: 'Projects', id: '#projects' },
     { name: 'Certifications', id: '#certifications' },
     { name: 'Contact', id: '#contact' },
+    { name: 'Resume', id: 'https://docs.google.com/document/d/1KPJXcDZbL-OtMNjcR5QnAUr7htAzY_lP/edit' },
   ];
 
   return (
@@ -105,16 +106,16 @@ const Navbar = () => {
         <div className="md:hidden bg-white dark:bg-dark-100 shadow-lg px-3">
           <div className="container py-2">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.path}
+                href={item.id}
                 className={`block py-2 nav-link ${
                   location.hash === item.id ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'text-gray-500 hover:text-blue-500'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -42,9 +42,9 @@ const About = () => {
               </h3>
               <ul className="space-y-4">
                 <li className="text-gray-600 dark:text-gray-300">
-                  <span className="font-medium">Bachelor's Degree in Computer Science</span>
+                  <span className="font-medium">Bachelor's Of Computer Application</span>
                   <br />
-                  University Name, 2018-2022
+                  Graphic Era Hill University, 2022-2025
                 </li>
               </ul>
             </motion.div>
@@ -62,7 +62,7 @@ const About = () => {
                 <li className="text-gray-600 dark:text-gray-300">
                   <span className="font-medium">Full Stack Developer</span>
                   <br />
-                  Company Name, 2022-Present
+                  Looking for a full-time opportunity
                 </li>
               </ul>
             </motion.div>

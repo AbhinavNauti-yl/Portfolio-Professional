@@ -46,7 +46,7 @@ const Home = () => {
               className="mt-12 flex justify-center space-x-6"
             >
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/AbhinavNauti-yl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#0284c7] dark:hover:text-[#38bdf8] transition-colors"
@@ -56,7 +56,7 @@ const Home = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/abhinav-nautiyal-264828248/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-[#0284c7] dark:hover:text-[#38bdf8] transition-colors"
