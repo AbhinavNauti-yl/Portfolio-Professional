@@ -103,7 +103,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-dark-100 shadow-lg px-3">
+        <div className="md:hidden bg-white dark:bg-[#1E293B] shadow-lg px-3 ">
           <div className="container py-2">
             {navItems.map((item) => (
               <a

@@ -67,7 +67,7 @@ const Certifications = () => {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 dark:text-[#38bdf8] hover:underline mt-2"
+                      className="text-[#0284c7] dark:text-[#38bdf8] hover:underline mt-2"
                     >
                       View Certificate
                     </a>
