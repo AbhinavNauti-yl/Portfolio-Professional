@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
+import Experince from "./pages/Experince";
 
 function App() {
   const [activeSection, setActiveSection] = useState();
@@ -61,6 +62,10 @@ function App() {
 
           <section id="about">
             <About />
+          </section>
+          
+          <section id="experience">
+            <Experince />
           </section>
 
           <section id="skills">

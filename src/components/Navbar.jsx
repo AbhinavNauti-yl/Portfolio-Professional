@@ -26,6 +26,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const navItems = [
     { name: "Home", id: "" },
     { name: "About", id: "about" },
+    { name: "Experience", id: "experience" },
     { name: "Skills", id: "skills" },
     { name: "Projects", id: "projects" },
     { name: "Certifications", id: "certifications" },
@@ -70,7 +71,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                       block: "start",
                     });
                 }}
-                className={`dark:text-white ${
+                className={`dark:text-white cursor-pointer ${
                   activeSection === item.id
                     ? "text-blue-600 font-bold border-b-2 border-blue-600"
                     : "text-gray-500 hover:text-blue-500"
