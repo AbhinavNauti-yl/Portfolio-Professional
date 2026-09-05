@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - devlope
+  pull_request:
+    branches:
+      - main
+      - devlope
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/Setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: install dependencies
+        uses: npm ci
+      - name: run tests
+        uses: npm test
+
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/Setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: install dependencies
+        uses: npm ci
+      - name: build applications
+        uses: npm run build
+
+  

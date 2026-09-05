@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import Experince from "./pages/Experince";
+import { skills } from "./utils/constants";
 
 function App() {
   const [activeSection, setActiveSection] = useState();
@@ -69,7 +70,7 @@ function App() {
           </section>
 
           <section id="skills">
-            <Skills />
+            <Skills skills={skills} />
           </section>
 
           <section id="projects">
@@ -86,7 +87,7 @@ function App() {
           
         </div>
       </Router>
-      <Toaster />
+      {/* <Toaster></Toaster> */}
     </ThemeProvider>
   );
 }

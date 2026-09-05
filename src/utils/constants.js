@@ -27,4 +27,35 @@ const experiences = [
   },
 ];
 
-export { experiences };
+const skills = [
+  {
+    category: 'Frontend',
+    items: [
+      { name: 'React', level: 80 },
+      { name: 'Redux', level: 70 },
+      { name: 'JavaScript', level: 85 },
+      { name: 'HTML/CSS', level: 90 },
+      { name: 'Tailwind CSS', level: 85 },
+    ],
+  },
+  {
+    category: 'Backend',
+    items: [
+      { name: 'Node.js', level: 85 },
+      { name: 'Express', level: 75 },
+      { name: 'JWT', level: 70 },
+      { name: 'MongoDb', level: 75 },
+    ],
+  },
+  {
+    category: 'Tools & Others',
+    items: [
+      { name: 'Git', level: 85 },
+      { name: 'Render', level: 60 },
+      { name: 'SQL', level: 75 },
+      { name: 'Agile', level: 80 },
+    ],
+  },
+];
+
+export { experiences, skills };
