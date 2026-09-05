@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - main
-      - devlope
+      - develop
 
 jobs:
   test:
@@ -18,14 +18,14 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
       - name: setup node
-        uses: actions/Setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - name: install dependencies
-        uses: npm ci
+        run: npm ci
       - name: run tests
-        uses: npm test
+        run: npm test
 
   build:
     runs-on: ubuntu-latest
@@ -39,8 +39,8 @@ jobs:
           node-version: 20
           cache: npm
       - name: install dependencies
-        uses: npm ci
+        run: npm ci
       - name: build applications
-        uses: npm run build
+        run: npm run build
 
   
