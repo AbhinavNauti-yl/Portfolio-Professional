@@ -1,9 +1,14 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
-import { useTheme } from '../context/ThemeContext';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  SunIcon,
+  MoonIcon,
+} from "@heroicons/react/24/outline";
+import { useTheme } from "../context/ThemeContext";
 
-const Navbar = () => {
+const Navbar = ({ activeSection, setActiveSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -14,26 +19,30 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Home', id: '' },
-    { name: 'About', id: '#about' },
-    { name: 'Skills', id: '#skills' },
-    { name: 'Projects', id: '#projects' },
-    { name: 'Certifications', id: '#certifications' },
-    { name: 'Contact', id: '#contact' },
-    { name: 'Resume', id: 'https://docs.google.com/document/d/1KPJXcDZbL-OtMNjcR5QnAUr7htAzY_lP/edit' },
+    { name: "Home", id: "" },
+    { name: "About", id: "about" },
+    { name: "Experience", id: "experience" },
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
+    { name: "Certifications", id: "certifications" },
+    { name: "Contact", id: "contact" },
+    {
+      name: "Resume",
+      id: "https://docs.google.com/document/d/1KPJXcDZbL-OtMNjcR5QnAUr7htAzY_lP/edit",
+    },
   ];
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-[#272a2c] backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? "bg-white/80 dark:bg-[#272a2c] backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="container">
@@ -52,16 +61,25 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={item.id}
-                className={`dark:text-white ${
-                  location.hash === item.id ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'text-gray-500 hover:text-blue-500'
+                // href={item.id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById(item.id)
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                }}
+                className={`dark:text-white cursor-pointer ${
+                  activeSection === item.id
+                    ? "text-blue-600 font-bold border-b-2 border-blue-600"
+                    : "text-gray-500 hover:text-blue-500"
                 }`}
               >
                 {item.name}
               </a>
             ))}
-
-
 
             <button
               onClick={toggleTheme}
@@ -110,7 +128,9 @@ const Navbar = () => {
                 key={item.name}
                 href={item.id}
                 className={`block py-2 nav-link ${
-                  location.hash === item.id ? 'text-blue-600 font-bold border-b-2 border-blue-600' : 'text-gray-500 hover:text-blue-500'
+                  location.hash === item.id
+                    ? "text-blue-600 font-bold border-b-2 border-blue-600"
+                    : "text-gray-500 hover:text-blue-500"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -124,4 +144,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
