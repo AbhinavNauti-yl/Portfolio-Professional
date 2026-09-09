@@ -1,3 +1,5 @@
+import { Feature_Sills } from "../featureTogel";
+
 const experiences = [
   {
     company: "Infosys",
@@ -27,7 +29,30 @@ const experiences = [
   },
 ];
 
-const skills = [
+const skills = Feature_Sills ? (
+  [
+  {
+    title: "Frontend",
+    icon: "⚡",
+    skills: ["React.js", "JavaScript", "Redux.js", "Tailwind CSS"],
+  },
+  {
+    title: "Backend",
+    icon: "⚙️",
+    skills: ["Node.js", "Express.js", "REST APIs", "Mongoose"],
+  },
+  {
+    title: "Database",
+    icon: "🗄️",
+    skills: ["MongoDB", "MySQL", "SQL", "DBMS"],
+  },
+  {
+    title: "Languages & Tools",
+    icon: "🛠️",
+    skills: ["C++", "Java", "Python", "Git", "Postman"],
+  },
+]
+) : ([
   {
     category: 'Frontend',
     items: [
@@ -56,6 +81,6 @@ const skills = [
       { name: 'Agile', level: 80 },
     ],
   },
-];
+]);
 
 export { experiences, skills };
