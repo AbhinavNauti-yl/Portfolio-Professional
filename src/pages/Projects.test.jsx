@@ -35,7 +35,7 @@ describe("Projects", () => {
     render(<Projects />);
 
     expect(
-      screen.getByRole("heading", { name: /my projects/i })
+      screen.getByRole("heading", { name: "My Projects" })
     ).toBeInTheDocument();
     expect(screen.getByText("BlogSphere")).toBeInTheDocument();
     expect(screen.getByText("Portfolio Website")).toBeInTheDocument();

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SkillsCard() {
+export default function SkillsCard({ category }) {
   return (
     <div
       key={category.title}

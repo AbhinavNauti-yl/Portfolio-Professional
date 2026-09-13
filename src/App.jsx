@@ -76,7 +76,7 @@ function App() {
 
           <section id="skills">
             {Feature_Sills ? (
-              <SkillsNew skillCategories={skills} />
+              <SkillsNew skills={skills} />
             ) : (
               <Skills skills={skills} />
             )}

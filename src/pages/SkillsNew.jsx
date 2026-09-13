@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SkillsNew({skillCategories}) {
+export default function SkillsNew({skills}) {
   return (
     <section id="skills" className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
@@ -22,7 +22,7 @@ export default function SkillsNew({skillCategories}) {
 
         {/* Skills */}
         <div className="grid gap-6 md:grid-cols-2">
-          {skillCategories.map((category) => (
+          {skills.map((category) => (
             <div
               key={category.title}
               className="group rounded-2xl border border-gray-200
