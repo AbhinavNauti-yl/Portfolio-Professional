@@ -25,6 +25,8 @@ import Home from './pages/Home.jsx';
 import Projects from './pages/Projects.jsx';
 import Skills from './pages/Skills.jsx';
 import Experince from './pages/Experince.jsx';
+import { Feature_Sills } from './featureTogel.js';
+import SkillsNew from './pages/SkillsNew.jsx';
 
 describe('Portfolio source files', () => {
   beforeEach(() => {
@@ -69,7 +71,7 @@ describe('Portfolio source files', () => {
     render(<About />);
 
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
-    expect(screen.getByText("Full Stack Developer")).toBeInTheDocument();
+    expect(screen.getByText("Front End Developer")).toBeInTheDocument();
     expect(screen.getByText('Education')).toBeInTheDocument();
     expect(screen.getByText('Experience')).toBeInTheDocument();
   });
@@ -84,13 +86,15 @@ describe('Portfolio source files', () => {
   });
 
   it('renders skill categories and progress percentages', () => {
-    render(<Skills skills={skills} />);
+    Feature_Sills ? (render(<SkillsNew skills={skills}/>)) : (render(<Skills skills={skills} />));
 
     expect(screen.getByText('Skills & Expertise')).toBeInTheDocument();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
     expect(screen.getByText('Backend')).toBeInTheDocument();
-    expect(screen.getByText('Tools & Others')).toBeInTheDocument();
-    expect(screen.getByText('React')).toBeInTheDocument();
+    !Feature_Sills && expect(screen.getByText('Tools & Others')).toBeInTheDocument();
+    Feature_Sills && expect(screen.getByText('Programming')).toBeInTheDocument();
+    Feature_Sills && expect(screen.getByText('Tools, Development & Deployment')).toBeInTheDocument()
+    Feature_Sills && expect(screen.getByText('React.js')).toBeInTheDocument();
   });
 
   it('renders project cards with links and metadata', () => {

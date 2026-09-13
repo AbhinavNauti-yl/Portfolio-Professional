@@ -12,6 +12,8 @@ import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import Experince from "./pages/Experince";
 import { skills } from "./utils/constants";
+import { Feature_Sills } from "./featureTogel";
+import SkillsNew from "./pages/SkillsNew";
 
 function App() {
   const [activeSection, setActiveSection] = useState();
@@ -22,7 +24,12 @@ function App() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
+            setActiveSection(entry.target.id);
+
+            const newHash = `#${entry.target.id}`;
+            if (window.location.hash !== newHash) {
+              history.pushState(null, "", newHash);
+            }
           }
         });
       },
@@ -39,7 +46,10 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="min-h-screen bg-gray-50 dark:bg-[#151616] transition-colors duration-300">
-          <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+          <Navbar
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+          />
           {/* <main>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -64,13 +74,17 @@ function App() {
           <section id="about">
             <About />
           </section>
-          
+
           <section id="experience">
             <Experince />
           </section>
 
           <section id="skills">
-            <Skills skills={skills} />
+            {Feature_Sills ? (
+              <SkillsNew skills={skills} />
+            ) : (
+              <Skills skills={skills} />
+            )}
           </section>
 
           <section id="projects">
@@ -84,7 +98,6 @@ function App() {
           <section id="contact">
             <Contact />
           </section>
-          
         </div>
       </Router>
       {/* <Toaster></Toaster> */}

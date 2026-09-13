@@ -3,9 +3,7 @@ import React from 'react';
 import '@testing-library/jest-dom/vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Skills from './Skills.jsx';
 import { skills } from '../utils/constants.js';
-import { Feature_Sills } from '../featureTogel.js';
 import SkillsNew from './SkillsNew.jsx';
 
 describe('Skills', () => {
@@ -35,13 +33,11 @@ describe('Skills', () => {
     vi.clearAllMocks();
   });
   it('renders skill categories and value badges', () => {
-    Feature_Sills ? render(<SkillsNew skills={skills}/>) : (render(<Skills skills={skills} />))
+    render(<SkillsNew skills={skills} />);
     expect(screen.getByRole('heading', { name: "Skills & Expertise" })).toBeInTheDocument();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
     expect(screen.getByText('Backend')).toBeInTheDocument();
-    !Feature_Sills && expect(screen.getByText('Tools & Others')).toBeInTheDocument();
-    Feature_Sills && expect(screen.getByText('Tools, Development & Deployment')).toBeInTheDocument();
-    Feature_Sills && expect(screen.getByText('Programming')).toBeInTheDocument();
-    expect(screen.getByText('React.js')).toBeInTheDocument();
+    expect(screen.getByText('Programming')).toBeInTheDocument();
+    expect(screen.getByText('Tools, Development & Deployment')).toBeInTheDocument();
   });
 });
