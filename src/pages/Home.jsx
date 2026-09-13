@@ -25,7 +25,7 @@ const Home = () => {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-                Full Stack Developer passionate about creating elegant solutions
+                Front End Developer passionate about creating elegant solutions
               </p>
             </motion.div>
 

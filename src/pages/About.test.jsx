@@ -37,7 +37,7 @@ describe("About", () => {
     expect(
       screen.getByText("About Me")
     ).toBeInTheDocument();
-    expect(screen.getByText("Full Stack Developer")).toBeInTheDocument();
+    expect(screen.getByText("Front End Developer")).toBeInTheDocument();
     expect(screen.getByText("Education")).toBeInTheDocument();
     expect(screen.getByText("Experience")).toBeInTheDocument();
   });

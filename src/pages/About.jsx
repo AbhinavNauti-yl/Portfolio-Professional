@@ -16,10 +16,7 @@ const About = () => {
           
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              I am a passionate Full Stack Developer with a strong foundation in web technologies
-              and a keen eye for creating elegant, user-friendly applications. My journey in
-              software development has equipped me with a diverse set of skills and a deep
-              understanding of both front-end and back-end technologies.
+              I'm a Frontend Developer at Infosys, currently working on projects for British Telecom (BT), with a focus on building and enhancing web applications using React.js, TypeScript, and JavaScript.
             </p>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
@@ -60,9 +57,9 @@ const About = () => {
               </h3>
               <ul className="space-y-4">
                 <li className="text-gray-600 dark:text-gray-300">
-                  <span className="font-medium">Full Stack Developer</span>
+                  <span className="font-medium">Front End Developer</span>
                   <br />
-                  Looking for a full-time opportunity
+                  Infosys
                 </li>
               </ul>
             </motion.div>

@@ -71,7 +71,7 @@ describe('Portfolio source files', () => {
     render(<About />);
 
     expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
-    expect(screen.getByText("Full Stack Developer")).toBeInTheDocument();
+    expect(screen.getByText("Front End Developer")).toBeInTheDocument();
     expect(screen.getByText('Education')).toBeInTheDocument();
     expect(screen.getByText('Experience')).toBeInTheDocument();
   });
