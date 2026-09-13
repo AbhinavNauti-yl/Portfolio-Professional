@@ -24,7 +24,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   }, []);
 
   const navItems = [
-    { name: "Home", id: "" },
+    { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Experience", id: "experience" },
     { name: "Skills", id: "skills" },

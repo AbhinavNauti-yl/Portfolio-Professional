@@ -25,6 +25,11 @@ function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+
+            const newHash = `#${entry.target.id}`;
+            if (window.location.hash !== newHash) {
+              history.pushState(null, "", newHash);
+            }
           }
         });
       },
